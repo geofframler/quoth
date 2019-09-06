@@ -1,7 +1,13 @@
 import React from 'react';
+import Quotes from './Quotes';
 
 function CCNQuotes() {
-  return <h1>CCN Quotes</h1>;
+  return(
+    <React.Fragment>
+      <h1>Quotes</h1>
+      <Quotes />
+    </React.Fragment>
+  ) 
 }
 
 export default CCNQuotes;

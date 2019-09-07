@@ -1,17 +1,22 @@
 import React from 'react';
+import './createquote.css';
 
 function CreateQuote() {
   return (
-    <React.Fragment>
+    <div id="quoteForm">
       <h2>Add a Quote</h2>
-        <textarea placeholder="Put your quote here!" />
+      <form>
+        <label>Quote</label>
+        <textarea type="text" placeholder="Put your quote here!" />
           <br />
-        <input placeholder="Author" />
+        <label>Author</label>
+        <input type="text" placeholder="Author Name" />    
+        <label>Source</label>
+        <input type="text" placeholder="https://url.of/author" />
           <br />
-        <input placeholder="Source" />
-          <br />
-      <button>Add Quote</button>
-    </React.Fragment>
+        <button type="submit">Add Quote</button>
+      </form>
+    </div>
   );
 }
 

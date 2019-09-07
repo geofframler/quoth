@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const useQuoteForm = (callback) => {
-  const [inputs, setInputs] = useState({});
+const useQuoteForm = (initialValues, callback) => {
+  const [inputs, setInputs] = useState(initialValues);
 
   const handleSubmit = (event) => {
-    if (event) {
-      event.preventDefault();
-    }
-    callback();
+    if (event) event.preventDefault();
+      callback();
   }
 
   const handleInputChange = (event) => {
@@ -15,11 +13,11 @@ const useQuoteForm = (callback) => {
       setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
   }
   
-  return(
+  return {
     handleSubmit,
     handleInputChange,
     inputs
-  );
+  };
 }
 
 export default useQuoteForm;

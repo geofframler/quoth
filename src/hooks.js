@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useQuoteForm = (initialValues, callback) => {
   const [inputs, setInputs] = useState(initialValues);
-
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault();
-      callback();
-  }
 
   const handleInputChange = (event) => {
       event.persist();
       setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
   }
+
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault();
+    callback();
+  }
   
   return {
-    handleSubmit,
+    inputs,
     handleInputChange,
-    inputs
+    handleSubmit
   };
 }
 

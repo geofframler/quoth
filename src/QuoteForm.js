@@ -1,9 +1,9 @@
 import React from 'react';
 import useQuoteForm from './hooks';
-import './createquote.css';
+import './quoteform.css';
 
-function CreateQuote() {
-  const createQuote = () => {
+function QuoteForm() {
+  const postQuote = () => {
     const urlQuotes = "http://localhost:3001/quotes";
     return fetch(urlQuotes, {
       method: 'POST',
@@ -16,10 +16,10 @@ function CreateQuote() {
         author: inputs.author,
         source: inputs.source,
       })
-    })         
+    })    
   }
 
-  const {inputs, handleInputChange, handleSubmit} = useQuoteForm({body: '', author: '', source: ''}, createQuote);
+  const {inputs, handleInputChange, handleSubmit} = useQuoteForm({body: '', author: '', source: ''}, postQuote);
 
   return (
     <div id="quoteForm">
@@ -58,4 +58,4 @@ function CreateQuote() {
   );
 }
 
-export default CreateQuote;
+export default QuoteForm;

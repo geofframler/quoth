@@ -1,15 +1,15 @@
 import React from 'react';
-import Quotes from './Quotes';
-import CreateQuote from './CreateQuote';
+import QuoteForm from './QuoteForm';
+import QuoteList from './QuoteList';
 
-function CCNQuotes() {
+function App() {
   return(
     <React.Fragment>
       <h1>Quotes</h1>
-      <CreateQuote />
-      <Quotes />
+      <QuoteForm />
+      <QuoteList />
     </React.Fragment>
   ) 
 }
 
-export default CCNQuotes;
+export default App;

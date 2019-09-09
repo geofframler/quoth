@@ -26,11 +26,9 @@ function QuoteForm({ getQuotes }) {
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
-    postQuote(inputs);
-    setInputs({body: '', author: '', source: ''});
-    setTimeout(() => {
-      getQuotes();
-    }, 100);
+    postQuote(inputs)
+    .then(() => setInputs({body: '', author: '', source: ''}))
+    .then(() => getQuotes());
   }
 
   return (

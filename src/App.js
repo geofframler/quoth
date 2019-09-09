@@ -26,13 +26,14 @@ function App() {
           <ul>
             {quotes.map((quote) => {
               return (
-                <li key="quote-{quote.id}">
+                <li key={quote.id}>
                   <div className="quoteBody">{quote.body}</div>
                   <div className="quoteAuthor">
                   - <a 
                       href={quote.source}
                       alt={quote.author}
                       title={quote.author} 
+                      rel="noopener noreferrer"
                       target="_blank" >
                         {quote.author}
                     </a>

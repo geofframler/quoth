@@ -1,11 +1,11 @@
-import React from 'react';
-import useQuoteForm from './hooks';
+import React, { useState } from 'react';
 import './quoteform.css';
 
-function QuoteForm() {
+function QuoteForm({ getQuotes }) {
+  const [inputs, setInputs] = useState({body: '', author: '', source: ''});
+
   const postQuote = () => {
-    const urlQuotes = "http://localhost:3001/quotes";
-    return fetch(urlQuotes, {
+    return fetch('http://localhost:3001/quotes', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -16,10 +16,20 @@ function QuoteForm() {
         author: inputs.author,
         source: inputs.source,
       })
-    })    
+    })
   }
 
-  const {inputs, handleInputChange, handleSubmit} = useQuoteForm({body: '', author: '', source: ''}, postQuote);
+  const handleInputChange = (event) => {
+    event.persist();
+    setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
+  }
+
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault();
+    postQuote(inputs);
+    setInputs({body: '', author: '', source: ''});
+    getQuotes();
+  }
 
   return (
     <div id="quoteForm">

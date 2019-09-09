@@ -28,7 +28,9 @@ function QuoteForm({ getQuotes }) {
     if (event) event.preventDefault();
     postQuote(inputs);
     setInputs({body: '', author: '', source: ''});
-    getQuotes();
+    setTimeout(() => {
+      getQuotes();
+    }, 100);
   }
 
   return (

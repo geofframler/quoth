@@ -6,8 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const getQuotes = () => {
-    const urlQuotes = "http://localhost:3001/quotes?_sort=id&_order=desc";
-    return fetch(urlQuotes)
+    return fetch('http://localhost:3001/quotes?_sort=id&_order=desc')
       .then(res => res.json())
       .then(res => setQuotes(res))
       .then(setLoading(false));       

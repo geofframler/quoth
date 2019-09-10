@@ -20,14 +20,14 @@ function App() {
     <div id="app">
       <h1>Quotes</h1>
       <QuoteForm getQuotes={getQuotes} />
-      {loading ? <div id="quotesLoading">Loading...</div> : 
-        <div id="quoteList">
+      {loading ? <div id="quotes-loading">Loading...</div> : 
+        <div id="quote-list">
           <ul>
             {quotes.map((quote) => {
               return (
                 <li key={quote.id}>
-                  <div className="quoteBody">{quote.body}</div>
-                  <div className="quoteAuthor">
+                  <div className="quote-body">{quote.body}</div>
+                  <div className="quote-author">
                   - <a 
                       href={quote.source}
                       alt={quote.author}

@@ -59,6 +59,12 @@
       "author": "Linus Torvalds",
       "body": "I'm doing a free operating system (just a hobby, won't be big and professional like GNU).",
       "source": "https://en.wikipedia.org/wiki/Linus_Torvalds"
+    },
+    {
+      "body": "There is no try.",
+      "author": "Yoda",
+      "source": "https://starwars.com",
+      "id": 11
     }
   ]
 }

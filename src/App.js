@@ -13,20 +13,26 @@ function App() {
   }
 
   useEffect(() => {
-      getQuotes();
+    getQuotes();
   }, []);
 
   return(
     <div id="app">
-      <h1>Quotes</h1>
-      <QuoteForm getQuotes={getQuotes} />
-      {loading ? <div id="quotes-loading">Loading...</div> : 
+      <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <a href="" class="uk-navbar-item uk-logo">Quotes</a>
+          </div>
+      </nav>
+      <div class="uk-card uk-card-body uk-card-primary uk-card-hover">
+        <QuoteForm getQuotes={getQuotes} />
+      </div>
+      {loading ? <div id="loading"><h4>Loading Quotes</h4><span uk-spinner="ratio: 4.5"></span></div> : 
         <div id="quote-list">
-          <ul>
-            {quotes.map((quote) => {
-              return (
-                <li key={quote.id}>
-                  <div className="quote-body">{quote.body}</div>
+          {quotes.map((quote) => {
+            return (
+              <div className="quote uk-card uk-card-default uk-card-hover" key={quote.id}>
+                <div className="uk-card-body">
+                  <div className="quote-body uk-card-title">"{quote.body}"</div>
                   <div className="quote-author">
                   - <a 
                       href={quote.source}
@@ -37,10 +43,16 @@ function App() {
                         {quote.author}
                     </a>
                   </div>
-                </li>
-              );
-            })}
-          </ul>
+                </div>
+                <div className="uk-card-footer">
+                  <a href="#" className="edit-link uk-button uk-button-text">
+                    <span className="icon" uk-icon="icon: pencil; ratio: .8"></span> Edit</a>
+                  <a href="#" className="delete-link uk-button uk-button-text">
+                    Delete <span className="icon" uk-icon="icon: trash; ratio: .8"></span></a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       }
     </div>

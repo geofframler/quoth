@@ -33,11 +33,10 @@ function QuoteForm({ getQuotes }) {
 
   return (
     <div id="quote-form">
-      <h2>Add a Quote</h2>
       <form onSubmit={handleSubmit} autoComplete="off">
         <label>Quote</label>
         <textarea 
-          className="quote-form-body"
+          className="quote-form-body uk-textarea"
           type="text" 
           name="body" 
           placeholder="Put your quote here!" 
@@ -48,7 +47,7 @@ function QuoteForm({ getQuotes }) {
         <br />
         <label>Author</label>
         <input
-          className="quote-form-author"
+          className="quote-form-author uk-input"
           type="text"
           name="author"
           placeholder="Author Name"
@@ -57,7 +56,7 @@ function QuoteForm({ getQuotes }) {
           required />
         <label>Source</label>
         <input
-          className="quote-form-source"
+          className="quote-form-source uk-input"
           type="text"
           name="source"
           placeholder="https://url.of/author"
@@ -65,7 +64,11 @@ function QuoteForm({ getQuotes }) {
           value={inputs.source} 
           required />
           <br />
-        <button type="submit">Add Quote</button>
+        <button 
+          type="submit"
+          className="uk-button uk-button-primary">
+            Add A Quote
+        </button>
       </form>
     </div>
   );

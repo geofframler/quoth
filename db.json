@@ -71,6 +71,12 @@
       "author": "Simon & Garfunkel",
       "source": "https://google.com",
       "id": 12
+    },
+    {
+      "body": "Any sufficiently advanced technology is indistinguishable from magic.",
+      "author": "Arthur C. Clarke",
+      "source": "https://arthurclark.com",
+      "id": 13
     }
   ]
 }

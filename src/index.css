@@ -14,16 +14,16 @@
     font-size: 18px;
 }
 
-.edit-link {
-    float: left;
-
-}
-
-.delete-link {
-    float:right;
+.quote-source {
+    float: right;
 }
 
 .icon {
     position: relative;
     top: -2px;
+}
+
+.uk-modal-title {
+    font-size: 24px;
+    color: #444444;
 }

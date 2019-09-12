@@ -4,7 +4,7 @@ describe('Visit Quotes', () => {
   });
 
   it('Renders', () => {
-    cy.get('h1').contains('Quotes');
+    cy.get('a').contains('Quotes');
   });
 
   it('GETs quote list from server', () => {
@@ -12,7 +12,7 @@ describe('Visit Quotes', () => {
   });
 
   it('Renders list of quotes', () => {
-    cy.get('ul');
+    cy.get('#quote-list');
   })
 
 });

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './quoteform.css';
+import './inputform.css';
 
-function QuoteForm({ getQuotes }) {
+function InputForm({ getQuotes }) {
   const [inputs, setInputs] = useState({body: '', author: '', source: ''});
+  const [sourceLink, setSourceLink] = useState("source-link-show");
+  const [sourceField, setSourceField] = useState("source-field-hide");
 
   const postQuote = () => {
     return fetch('http://localhost:3001/quotes', {
@@ -17,6 +19,12 @@ function QuoteForm({ getQuotes }) {
         source: inputs.source,
       })
     })
+  }
+
+  const setSource = (event) => {
+    if (event) event.preventDefault();
+    setSourceLink('source-link-hide');
+    setSourceField('source-field-show')
   }
 
   const handleInputChange = (event) => {
@@ -36,7 +44,7 @@ function QuoteForm({ getQuotes }) {
       <form onSubmit={handleSubmit} autoComplete="off">
         <label>Quote</label>
         <textarea 
-          className="quote-form-body uk-textarea"
+          className="post-body quote-form-body uk-textarea"
           type="text" 
           name="body" 
           placeholder="Put your quote here!" 
@@ -44,29 +52,30 @@ function QuoteForm({ getQuotes }) {
           value={inputs.body} 
           autoFocus
           required />
-        <br />
         <label>Author</label>
         <input
-          className="quote-form-author uk-input"
+          className="post-author quote-form-author uk-input"
           type="text"
           name="author"
-          placeholder="Author Name"
+          placeholder="Author"
           onChange={handleInputChange} 
           value={inputs.author} 
           required />
         <label>Source</label>
+        <div className={'source-link ' + sourceLink}>
+          <a href="/#" onClick={setSource}>Add Source</a>
+        </div>
         <input
-          className="quote-form-source uk-input"
+          className={'post-source quote-form-source uk-input ' + sourceField} 
           type="text"
           name="source"
           placeholder="https://url.of/author"
           onChange={handleInputChange} 
-          value={inputs.source} 
-          required />
+          value={inputs.source} />
           <br />
         <button 
           type="submit"
-          className="uk-button uk-button-primary">
+          className="post-button uk-button uk-button-primary">
             Add A Quote
         </button>
       </form>
@@ -74,4 +83,4 @@ function QuoteForm({ getQuotes }) {
   );
 }
 
-export default QuoteForm;
+export default InputForm;

@@ -19,14 +19,12 @@ describe('Post a Quote', () => {
   });
 
   it('successfully posts a quote to server', () => {
-    cy.get('.quote-form-body')
+    cy.get('.post-body')
       .type(quoteBody);
-    cy.get('.quote-form-author')
+    cy.get('.post-author')
       .type(quoteAuthor);
-    cy.get('.quote-form-source')
-      .type(quoteSource);
     cy.get('form')
-      .contains('Add Quote').click('');
+      .contains('Add A Quote').click('');
   
     cy.server()
     cy.route('POST', 'http://localhost:3001/quotes', {
@@ -37,6 +35,6 @@ describe('Post a Quote', () => {
   })
 
   it('displays quote on homepage', () => {
-    cy.get('li').first().contains(quoteBody);
+    cy.get('.quote').first().contains(quoteBody);
   })
 })

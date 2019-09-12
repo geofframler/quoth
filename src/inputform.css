@@ -1,0 +1,64 @@
+#quote-form {
+    text-align:center;
+    max-width: 500px;
+    margin: auto;
+    padding: 15px 0 10px 0;
+}
+
+textarea {
+    height: 100px;
+    font-size: 24px !important;
+}
+
+h2 {
+    color: white;
+}
+
+form label {
+    display:none;
+}
+
+.quote-form-body {
+    margin-bottom: 30px;
+}
+
+.quote-form-author, .quote-form-source, .source-link {
+    width: 49%;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.source-link {
+    height: 32px;
+    padding-top: 8px;
+}
+
+.quote-form-author {
+    float: left;
+}
+
+.quote-form-source, .source-link {
+    float: right;
+}
+
+.source-link-show, .source-field-show {
+    display: block;
+}
+
+.source-link-hide, .source-field-hide {
+    display: none;
+}
+
+.alert-hide {
+    display:none;
+}
+
+.alert-show {
+    display:block;
+    height: 50px;
+    margin: -20px 0 30px 0;
+}
+
+.uk-button {
+    margin: 0 5px;
+}

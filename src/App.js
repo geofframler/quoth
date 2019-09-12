@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import QuoteForm from './QuoteForm';
+import InputForm from './InputForm';
+import EditModal from './EditModal';
 
 function App() {
   const [quotes, setQuotes] = useState([]);
@@ -18,38 +19,39 @@ function App() {
 
   return(
     <div id="app">
-      <nav class="uk-navbar-container" uk-navbar>
-          <div class="uk-navbar-left">
-            <a href="" class="uk-navbar-item uk-logo">Quotes</a>
+      <nav className="uk-navbar-container">
+          <div className="uk-navbar-left">
+            <a href="/" className="uk-navbar-item uk-logo">Quotes</a>
           </div>
       </nav>
-      <div class="uk-card uk-card-body uk-card-primary uk-card-hover">
-        <QuoteForm getQuotes={getQuotes} />
+      <div className="uk-card uk-card-body uk-card-primary uk-card-hover">
+        <InputForm getQuotes={getQuotes} />
       </div>
       {loading ? <div id="loading"><h4>Loading Quotes</h4><span uk-spinner="ratio: 4.5"></span></div> : 
         <div id="quote-list">
           {quotes.map((quote) => {
             return (
-              <div className="quote uk-card uk-card-default uk-card-hover" key={quote.id}>
-                <div className="uk-card-body">
-                  <div className="quote-body uk-card-title">"{quote.body}"</div>
-                  <div className="quote-author">
-                  - <a 
-                      href={quote.source}
-                      alt={quote.author}
-                      title={quote.author} 
-                      rel="noopener noreferrer"
-                      target="_blank" >
-                        {quote.author}
-                    </a>
+              <div className="quote" key={quote.id}>
+                <div className="uk-card uk-card-default uk-card-hover">
+                  <div className="uk-card-body">
+                    <div className="quote-body uk-card-title">"{quote.body}"</div>
+                    <div className="quote-author">
+                    - {quote.author}
+                    </div>
+                    {quote.source && (
+                    <div className="quote-source">
+                      Source: <a href={quote.source}>{quote.source}</a>
+                    </div>
+                    )}
+                  </div>
+                  <div className="uk-card-footer">
+                    <a href="#/" className="edit-link uk-button uk-button-text uk-float-left" uk-toggle={'target: #edit-' + quote.id}>
+                      <span uk-icon="icon: pencil; ratio: .8"></span> Edit</a>
+                    <a href="#/" className="delete-link uk-button uk-button-text uk-float-right">
+                      Delete <span uk-icon="icon: trash; ratio: .8"></span></a>
                   </div>
                 </div>
-                <div className="uk-card-footer">
-                  <a href="#" className="edit-link uk-button uk-button-text">
-                    <span className="icon" uk-icon="icon: pencil; ratio: .8"></span> Edit</a>
-                  <a href="#" className="delete-link uk-button uk-button-text">
-                    Delete <span className="icon" uk-icon="icon: trash; ratio: .8"></span></a>
-                </div>
+                <EditModal getQuotes={getQuotes} id={quote.id} body={quote.body} author={quote.author} source={quote.source} />
               </div>
             );
           })}

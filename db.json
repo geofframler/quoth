@@ -65,12 +65,6 @@
       "author": "Yoda",
       "source": "https://starwars.com",
       "id": 11
-    },
-    {
-      "body": "Hey!",
-      "author": "Me",
-      "source": "geoff.com",
-      "id": 12
     }
   ]
 }

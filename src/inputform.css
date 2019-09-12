@@ -22,6 +22,34 @@ form label {
     margin-bottom: 30px;
 }
 
+.quotation-mark-left {
+    display: block;
+    position: relative;
+    right: 75px;
+    top: 55px;
+    width: 60px;
+    height: 60px;
+    margin-top: -55px;
+}
+
+.quotation-mark-left span {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+
+.quotation-mark-right {
+    display: block;
+    position: relative;
+    left: 513px;
+    top: -5px;
+    margin-bottom: -55px;
+    width: 60px;
+    height: 60px;
+}
+
+
 .quote-form-author, .quote-form-source, .source-link {
     width: 49%;
     margin-bottom: 30px;

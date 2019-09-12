@@ -43,6 +43,8 @@ function InputForm({ getQuotes }) {
     <div id="quote-form">
       <form onSubmit={handleSubmit} autoComplete="off">
         <label>Quote</label>
+        <div className="quotation-mark-left"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
+        <div className="quotation-mark-right"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
         <textarea 
           className="post-body quote-form-body uk-textarea"
           type="text" 

@@ -28,10 +28,11 @@ function App() {
     <div id="app">
       <nav className="uk-navbar-container">
           <div className="uk-navbar-left">
-            <a href="/" className="uk-navbar-item uk-logo">Quotes</a>
+            <a href="/" className="uk-navbar-item uk-logo">Quoth</a>
+            <span className="uk-navbar-item">A Quotes App</span>
           </div>
       </nav>
-      <div className="uk-card uk-card-body uk-card-primary uk-card-hover">
+      <div className="uk-card uk-card-body uk-card-small uk-card-primary uk-card-hover">
         <InputForm getQuotes={getQuotes} />
       </div>
       {loading ? <div id="loading"><h4>Loading Quotes</h4><span uk-spinner="ratio: 4.5"></span></div> : 
@@ -39,7 +40,7 @@ function App() {
           {quotes.map((quote) => {
             return (
               <div className="quote" key={quote.id}>
-                <div className="uk-card uk-card-default uk-card-hover">
+                <div className="uk-card uk-card-small uk-card-default uk-card-hover">
                   <div className="uk-card-body">
                     <div className="quote-body uk-card-title">"{quote.body}"</div>
                     <div className="quote-author">
@@ -63,7 +64,7 @@ function App() {
                         Delete <span uk-icon="icon: trash; ratio: .8"></span>
                     </button>
                     <div uk-drop="mode: click; pos: top; animation: uk-animation-slide-bottom-small; duration: 500">
-                        <div class="delete-drop uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover">
+                        <div className="delete-drop uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover">
                           <h5>Are you sure?</h5>
                             <button 
                               onClick={() => deleteQuote(quote.id)} 

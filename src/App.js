@@ -13,6 +13,13 @@ function App() {
       .then(setLoading(false));       
   }
 
+  const deleteQuote = (id) => {
+    return fetch( 'http://localhost:3001/quotes/' + id , {
+      method: 'DELETE',
+    })
+    .then(() => getQuotes());
+  }
+
   useEffect(() => {
     getQuotes();
   }, []);
@@ -45,19 +52,36 @@ function App() {
                     )}
                   </div>
                   <div className="uk-card-footer">
-                    <a href="#/" className="edit-link uk-button uk-button-text uk-float-left" uk-toggle={'target: #edit-' + quote.id}>
-                      <span uk-icon="icon: pencil; ratio: .8"></span> Edit</a>
-                    <a href="#/" className="delete-link uk-button uk-button-text uk-float-right">
-                      Delete <span uk-icon="icon: trash; ratio: .8"></span></a>
+                    <a href="#/" 
+                      className="edit-link uk-button uk-button-text uk-float-left" 
+                      uk-toggle={'target: #edit-' + quote.id}>
+                      <span uk-icon="icon: pencil; ratio: .8"></span> Edit
+                    </a>
+                    <button 
+                      className="delete-link uk-button uk-button-text uk-float-right"
+                      type="button">
+                        Delete <span uk-icon="icon: trash; ratio: .8"></span>
+                    </button>
+                    <div uk-drop="mode: click; pos: top; animation: uk-animation-slide-bottom-small; duration: 500">
+                        <div class="delete-drop uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover">
+                          <h5>Are you sure?</h5>
+                            <button 
+                              onClick={() => deleteQuote(quote.id)} 
+                              type="submit"
+                              className="delete-button uk-button uk-button-default uk-button-danger">
+                                Yes
+                            </button>
+                        </div>
+                    </div>
                   </div>
+                  <EditModal getQuotes={getQuotes} id={quote.id} body={quote.body} author={quote.author} source={quote.source} />
                 </div>
-                <EditModal getQuotes={getQuotes} id={quote.id} body={quote.body} author={quote.author} source={quote.source} />
               </div>
             );
           })}
         </div>
       }
-    </div>
+    </div> 
   ) 
 }
 

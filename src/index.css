@@ -23,7 +23,17 @@
     top: -2px;
 }
 
+.uk-modal {
+    z-index: 5000;
+}
+
 .uk-modal-title {
     font-size: 24px;
     color: #444444;
+}
+
+.delete-drop {
+    width: 165px;
+    text-align: center;
+    transform: translate(67px, 0px);
 }

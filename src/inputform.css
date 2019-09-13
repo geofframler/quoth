@@ -49,9 +49,20 @@ form label {
     height: 60px;
 }
 
+.author-hyphen {
+    display: block;
+    position: relative;
+    right: 55px;
+    top: 50px;
+    width: 60px;
+    height: 60px;
+    margin-top: -55px;
+    font-size: 36px;
+}
+
 
 .quote-form-author, .quote-form-source, .source-link {
-    width: 49%;
+    width: 47%;
     margin-bottom: 30px;
     font-size: 18px;
 }

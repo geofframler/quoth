@@ -55,6 +55,7 @@ function InputForm({ getQuotes }) {
           autoFocus
           required />
         <label>Author</label>
+        <div className="author-hyphen">-</div>
         <input
           className="post-author quote-form-author uk-input"
           type="text"

@@ -65,6 +65,144 @@
       "author": "Yoda",
       "source": "https://starwars.com",
       "id": 11
+    },
+    {
+      "body": "One cannot and must not try to erase the past merely because it does not fit the present.",
+      "author": "Golda Meir",
+      "source": "https://en.wikipedia.org/wiki/Golda_Meir",
+      "id": 12
+    },
+    {
+      "body": "I know I am getting better at golf because I am hitting fewer spectators.",
+      "author": "Gerald Ford",
+      "source": "https://en.wikipedia.org/wiki/Gerald_Ford",
+      "id": 13
+    },
+    {
+      "body": "Any sufficiently advanced technology is indistinguishable from magic.",
+      "author": "Arthur C. Clarke",
+      "source": "https://www.arthurcclarke.org",
+      "id": 14
+    },
+    {
+      "body": "A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.",
+      "author": "Antoine de Saint-Exupéry",
+      "source": "https://en.wikipedia.org/wiki/Antoine_de_Saint-Exupéry",
+      "id": 15
+    },
+    {
+      "body": "An investment in knowledge always pays the best interest.",
+      "author": "Benjamin Franklin",
+      "source": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+      "id": 16
+    },
+    {
+      "body": "I count him braver who overcomes his desires than him who conquers his enemies; for the hardest victory is over self.",
+      "author": "Aristotle",
+      "source": "https://en.wikipedia.org/wiki/Aristotle",
+      "id": 17
+    },
+    {
+      "body": "Don't cry because it's over, smile because it happened.",
+      "author": "Theodor Seuss Geisel",
+      "source": "https://en.wikipedia.org/wiki/Dr._Seuss",
+      "id": 18
+    },
+    {
+      "body": "Be yourself; everyone else is already taken.",
+      "author": "Oscar Wilde",
+      "source": "https://en.wikipedia.org/wiki/Oscar_Wilde",
+      "id": 19
+    },
+    {
+      "body": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein",
+      "source": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "id": 20
+    },
+    {
+      "body": "Any society that would give up a little liberty to gain a little security will deserve neither and lose both.",
+      "author": "Benjamin Franklin",
+      "source": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+      "id": 21
+    },
+    {
+      "body": "Only the educated are free.",
+      "author": "Epictetus",
+      "source": "https://en.wikipedia.org/wiki/Epictetus",
+      "id": 22
+    },
+    {
+      "body": "Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.",
+      "author": "Bill Watterson",
+      "source": "https://en.wikipedia.org/wiki/Bill_Watterson",
+      "id": 23
+    },
+    {
+      "body": "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+      "author": "Theodor Seuss Geisel",
+      "source": "https://en.wikipedia.org/wiki/Dr._Seuss",
+      "id": 24
+    },
+    {
+      "body": "If you tell the truth, you don't have to remember anything.",
+      "author": "Samuel Langhorne Clemens",
+      "source": "https://en.wikipedia.org/wiki/Mark_Twain",
+      "id": 25
+    },
+    {
+      "body": "I am so clever that sometimes I don't understand a single word of what I am saying.",
+      "author": "Oscar Wilde",
+      "source": "https://en.wikipedia.org/wiki/Oscar_Wilde",
+      "id": 26
+    },
+    {
+      "body": "The life which is unexamined is not worth living.",
+      "author": "Socrates",
+      "source": "https://en.wikipedia.org/wiki/Socrates",
+      "id": 27
+    },
+    {
+      "body": "To accomplish great things, we must dream as well as act.",
+      "author": "Anatole France",
+      "source": "https://en.wikipedia.org/wiki/Anatole_France",
+      "id": 28
+    },
+    {
+      "body": "Try not to become a man of success but rather to become a man of value.",
+      "author": "Albert Einstein",
+      "source": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "id": 29
+    },
+    {
+      "body": "We cannot learn without pain.",
+      "author": "Aristotle",
+      "source": "https://en.wikipedia.org/wiki/Aristotle",
+      "id": 30
+    },
+    {
+      "body": "Banking establishments are more dangerous than standing armies.",
+      "author": "Thomas Jefferson",
+      "source": "https://en.wikipedia.org/wiki/Thomas_Jefferson",
+      "id": 31
+    },
+    {
+      "body": "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+      "author": "Zig Ziglar",
+      "source": "https://en.wikipedia.org/wiki/Zig_Ziglar",
+      "id": 32
+    },
+    {
+      "body": "You could not prevent a thunderstorm, but you could use the electricity; you could not direct the wind, but you could trim your sail so as to propel your vessel as you pleased, no matter which way the wind blew.",
+      "author": "Cora L. V. Scott",
+      "source": "https://en.wikipedia.org/wiki/Cora_L._V._Scott",
+      "id": 33
+    },
+    {
+      "body": "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",
+      "author": "Albert Einstein",
+      "source": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "id": 34
     }
   ]
 }

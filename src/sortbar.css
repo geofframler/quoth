@@ -1,0 +1,44 @@
+/* Sort Bar */
+
+.sort-bar {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-button {
+    position: relative;
+    top: 30px;
+    left: 165px;
+}
+
+.clear-search {
+    font-size: .9em;
+}
+
+/* UI Kit */
+
+.uk-navbar-container {
+    position: relative; 
+    background-color: #dedede !important;
+    transition: background-color .3s, box-shadow .3s;
+
+}
+
+.uk-navbar-sticky {
+    background-color: white !important;
+    box-shadow: 0px 0px 20px #888888;
+}
+
+.uk-select {
+    margin: 0 10px;
+}
+
+.uk-card-small {
+    z-index: 5;
+}
+
+.uk-search {
+    margin: -4px 8px 0;
+    width: 200px;
+}
+

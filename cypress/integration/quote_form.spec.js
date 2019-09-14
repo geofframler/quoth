@@ -9,11 +9,11 @@ describe('Post a Quote', () => {
 
   it('focuses quote body textarea on load', () => {
     cy.focused()
-      .should('have.class', 'quote-form-body')
+      .should('have.class', 'input-form-body')
   });
 
   it('accepts input', () => {
-    cy.get('.quote-form-body')
+    cy.get('.input-form-body')
     .type(quoteBody)
     .should('have.value', quoteBody)
   });

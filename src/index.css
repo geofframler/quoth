@@ -1,8 +1,19 @@
+/* Index */
+
 #loading {
     width: 100%;
     margin: 50px 0;    
     text-align: center;
 }
+
+#search-empty {
+    width: 100%;
+    margin: 50px 0;    
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Quotes */
 
 .quote {
     max-width: 700px;
@@ -23,6 +34,14 @@
     top: -2px;
 }
 
+.delete-drop {
+    width: 165px;
+    text-align: center;
+    transform: translate(67px, 0px);
+}
+
+/* UI Kit */
+
 .uk-modal {
     z-index: 5000;
 }
@@ -30,10 +49,4 @@
 .uk-modal-title {
     font-size: 24px;
     color: #444444;
-}
-
-.delete-drop {
-    width: 165px;
-    text-align: center;
-    transform: translate(67px, 0px);
 }

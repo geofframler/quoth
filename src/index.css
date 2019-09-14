@@ -6,9 +6,9 @@
     text-align: center;
 }
 
-#search-empty {
+#search-results {
     width: 100%;
-    margin: 50px 0;    
+    margin: 0px 0;    
     text-align: center;
     font-size: 24px;
 }
@@ -41,6 +41,10 @@
 }
 
 /* UI Kit */
+
+.uk-logo {
+    margin-left: 10px;
+}
 
 .uk-modal {
     z-index: 5000;

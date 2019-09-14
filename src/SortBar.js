@@ -24,9 +24,13 @@ const SortBar = (props) => {
             </form>
           </div>
 
+          <div className="uk-navbar-center">
+            <a id="js-scroll-trigger" href="" uk-scroll="true" uk-totop="true" duration="500"></a>
+          </div>
+
           <div className="uk-navbar-right">
             <div className="uk-margin">
-              {props.search && <a href="/" className="clear-search">clear search</a>}
+              {props.searchResult && <a href="" className="clear-search">clear search</a>}
               <form className="uk-search uk-search-default" onSubmit={props.getQuotes}>
                 <button type="submit" href="" className="uk-button uk-button-link uk-search-icon-flip"><span className="search-button" uk-icon="icon: search; ratio: 1"></span></button>
                 <input className="uk-search-input" type="search" placeholder="Search..." onChange={(event) => props.setSearch(event.target.value)} />

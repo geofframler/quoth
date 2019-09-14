@@ -20,13 +20,15 @@
 .uk-navbar-container {
     position: relative; 
     background-color: #dedede !important;
-    transition: background-color .3s, box-shadow .3s;
-
+    transition: background-color .4s, box-shadow .4s, border .1s;
 }
 
 .uk-navbar-sticky {
     background-color: white !important;
     box-shadow: 0px 0px 20px #888888;
+    border-top-style: solid;
+    border-top-width: 12px;
+    border-top-color: #705580;
 }
 
 .uk-select {
@@ -42,3 +44,18 @@
     width: 200px;
 }
 
+#js-scroll-trigger {
+    display: none;
+}
+
+.uk-navbar-sticky #js-scroll-trigger {
+    display: block;
+    position: relative;
+    top: -10px;
+}
+
+@media only screen and (max-width: 700px) {
+    #js-scroll-trigger {
+        display: none;
+    }
+}

@@ -3,7 +3,7 @@ import './inputform.css';
 
 function EditModal(props) {
   const [editInputs, setEditInputs] = useState({ id: props.id, body: props.body, author: props.author, source: props.source });
-  const [alert, setAlert] = useState('alert-hide');
+  const [alertShow, setAlertShow] = useState('');
 
   // Edit an existing quote in the database
   const editQuote = () => {
@@ -26,16 +26,16 @@ function EditModal(props) {
     event.persist();
     setEditInputs(editInputs => ({ ...editInputs, [event.target.name]: event.target.value }));
   }
-  
+
   // Handle the form submission for editing a quote
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
     editQuote(editInputs)
-      .then(() => setAlert('alert-hide'))
+      .then(() => setAlertShow(''))
       .then(() => props.getQuotes())
-      .then(() => setAlert('alert-show'))
+      .then(() => setAlertShow('alert-show'))
       .then(() => setTimeout(() => {
-        setAlert('alert-hide')
+        setAlertShow('')
       }, 3000));
   }
 
@@ -48,12 +48,15 @@ function EditModal(props) {
         </div>
         <div className="uk-modal-body">
           <div id="input-form">
-            <div className={alert}>
+
+            <div className={"alert-hide " + alertShow}>
               <div className="uk-alert-success" uk-alert="true">
                 <p>Quote successfully edited!</p>
               </div>
             </div>
+
             <form onSubmit={handleSubmit} autoComplete="off">
+
               <label>Quote</label>
               <textarea
                 className="input-form-body uk-textarea"
@@ -65,6 +68,7 @@ function EditModal(props) {
                 autoFocus
                 required />
               <br />
+
               <label>Author</label>
               <input
                 className="input-form-author uk-input"
@@ -74,6 +78,7 @@ function EditModal(props) {
                 onChange={handleInputChange}
                 value={editInputs.author}
                 required />
+
               <label>Source</label>
               <input
                 className="input-form-source uk-input"
@@ -83,11 +88,12 @@ function EditModal(props) {
                 onChange={handleInputChange}
                 value={editInputs.source} />
               <br />
+
               <button
                 className="uk-button uk-button-default uk-modal-close"
                 type="button">
                 Close
-                </button>
+              </button>
               <button
                 type="submit"
                 className="uk-button uk-button-primary" >

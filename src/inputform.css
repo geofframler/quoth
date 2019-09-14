@@ -100,13 +100,19 @@ form label {
 /* Alert */
 
 .alert-hide {
-    display:none;
+    height: 0px;
+    margin: -25px 0 15px 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 1s, opacity .5s;
 }
 
 .alert-show {
-    display:block;
-    height: 50px;
-    margin: -20px 0 30px 0;
+    height: 60px !important;
+    margin: -25px 0 15px 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: height .5s, opacity 1s;
 }
 
 /* UI Kit */

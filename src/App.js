@@ -21,6 +21,11 @@ function App() {
       .then(setLoading(false));
   }
 
+  // Get default quote list on page load
+  useEffect(() => {
+    getQuotes();
+  }, []);
+
   // Delete a quote from server by ID
   const deleteQuote = (id) => {
     return fetch('http://localhost:3001/quotes/' + id, {
@@ -29,24 +34,11 @@ function App() {
       .then(() => getQuotes());
   }
 
-  // Update quote list with sort options
-  const updateQuoteList = (event) => {
-
-    getQuotes();
-  }
-
-  // Get default quote list on page load
-  useEffect(() => {
-    getQuotes();
-  }, []);
-
   return (
     <div id="app">
       <NavBar />
 
-      <div className="input-form-wrapper uk-card uk-card-body uk-card-small uk-card-primary uk-card-hover">
-        <InputForm getQuotes={getQuotes} />
-      </div>
+      <InputForm getQuotes={getQuotes} />
 
       <SortBar
         getQuotes={getQuotes}
@@ -76,7 +68,7 @@ function App() {
                   </div>
 
                   <div className="uk-card-footer">
-                    <a href="#/"
+                    <a href="#"
                       className="edit-link uk-button uk-button-text uk-float-left"
                       uk-toggle={'target: #edit-' + quote.id}>
                       <span className="icon" uk-icon="icon: pencil; ratio: .8"></span> Edit

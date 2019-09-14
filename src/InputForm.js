@@ -44,48 +44,50 @@ function InputForm({ getQuotes }) {
   }
 
   return (
-    <div id="input-form">
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <label>Quote</label>
-        <div className="quotation-mark-left"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
-        <div className="quotation-mark-right"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
-        <textarea
-          className="post-body input-form-body uk-textarea"
-          type="text"
-          name="body"
-          placeholder="Put your quote here!"
-          onChange={handleInputChange}
-          value={inputs.body}
-          autoFocus
-          required />
-        <label>Author</label>
-        <div className="author-hyphen">-</div>
-        <input
-          className="post-author input-form-author uk-input"
-          type="text"
-          name="author"
-          placeholder="Author"
-          onChange={handleInputChange}
-          value={inputs.author}
-          required />
-        <label>Source</label>
-        <div className={'source-link ' + sourceLink}>
-          <a href="/#" onClick={setSource}>Add Citation</a>
-        </div>
-        <input
-          className={'post-source input-form-source uk-input ' + sourceField}
-          type="text"
-          name="source"
-          placeholder="https://url.of/author"
-          onChange={handleInputChange}
-          value={inputs.source} />
-        <br />
-        <button
-          type="submit"
-          className="post-button uk-button uk-button-primary">
-          Add A Quote
-        </button>
-      </form>
+    <div className="input-form-wrapper uk-card uk-card-body uk-card-small uk-card-primary uk-card-hover">
+      <div id="input-form">
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <label>Quote</label>
+          <div className="quotation-mark-left"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
+          <div className="quotation-mark-right"><span uk-icon="icon: quote-right; ratio: 4"></span></div>
+          <textarea
+            className="post-body input-form-body uk-textarea"
+            type="text"
+            name="body"
+            placeholder="Put your quote here!"
+            onChange={handleInputChange}
+            value={inputs.body}
+            autoFocus
+            required />
+          <label>Author</label>
+          <div className="author-hyphen">-</div>
+          <input
+            className="post-author input-form-author uk-input"
+            type="text"
+            name="author"
+            placeholder="Author"
+            onChange={handleInputChange}
+            value={inputs.author}
+            required />
+          <label>Source</label>
+          <div className={'source-link ' + sourceLink}>
+            <a href="/#" onClick={setSource}>Add Citation</a>
+          </div>
+          <input
+            className={'post-source input-form-source uk-input ' + sourceField}
+            type="text"
+            name="source"
+            placeholder="https://url.of/author"
+            onChange={handleInputChange}
+            value={inputs.source} />
+          <br />
+          <button
+            type="submit"
+            className="post-button uk-button uk-button-primary">
+            Add A Quote
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

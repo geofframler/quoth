@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './inputform.css';
+import '../styles/inputform.css';
 
 function InputForm({ getQuotes }) {
   const [inputs, setInputs] = useState({ body: '', author: '', source: '' });

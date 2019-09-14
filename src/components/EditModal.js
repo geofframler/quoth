@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './inputform.css';
+import '../styles/inputform.css';
 
 function EditModal(props) {
   const [editInputs, setEditInputs] = useState({ id: props.id, body: props.body, author: props.author, source: props.source });

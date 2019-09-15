@@ -98,6 +98,25 @@ form label {
     font-size: 36px;
 }
 
+#raven-success, #raven-success-edit {
+    width: 60px;
+    position: relative;
+    top: 10px;
+    left: 138px;
+    margin-bottom: -42px;
+    opacity: 0;
+    transition: opacity .3s, top .3s;
+}
+
+#raven-success-edit {
+    left: 124px;
+}
+
+.raven-success-show {
+    top: 0 !important;
+    opacity: 1 !important;
+}
+
 /* Alert */
 
 .alert-hide {

@@ -36,7 +36,7 @@ function App() {
   const paginate = (pageNumber) => setPage(pageNumber);
 
   return (
-    <div id="app">
+    <div id='app'>
       <NavBar />
 
       <InputForm getQuotes={getQuotes} />
@@ -50,9 +50,9 @@ function App() {
         perPage={perPage}
         setPerPage={setPerPage} />
 
-      {loading ? <div id="loading"><h3>Loading Quotes</h3><span uk-spinner="ratio: 4.5"></span></div> :
+      {loading ? <div id='loading'><h3>Loading Quotes</h3><span uk-spinner='ratio: 4.5'></span></div> :
         <React.Fragment>
-          <div id="quote-list" uk-scrollspy="target: > div; cls: uk-animation-slide-top-small; delay: 20">
+          <div id='quote-list' uk-scrollspy='target: > div; cls: uk-animation-slide-top-small; delay: 20'>
 
             <Pagination
               page={page}
@@ -62,8 +62,8 @@ function App() {
 
             {currentQuotes.map((quote) => {
               return (
-                <div className="quote" key={quote.id}>
-                  <div className="uk-card uk-card-small uk-card-default uk-card-hover">
+                <div className='quote' key={quote.id}>
+                  <div className='uk-card uk-card-small uk-card-default uk-card-hover'>
                     <Quote
                       id={quote.id}
                       body={quote.body}

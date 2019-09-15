@@ -15,6 +15,10 @@
     font-size: .9em;
 }
 
+.sort-divider {
+    font-size: 24px;
+}
+
 /* UI Kit */
 
 .uk-navbar-container {
@@ -55,7 +59,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    #js-scroll-trigger {
+    .uk-navbar-sticky #js-scroll-trigger {
         display: none;
     }
 }

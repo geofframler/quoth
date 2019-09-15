@@ -6,14 +6,43 @@ const SortBar = (props) => {
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState('');
 
+  // Submit a search query
   const searchQuotes = (event) => {
     if (event) event.preventDefault();
     return fetch('http://localhost:3001/quotes?_sort=' + sort + '&q=' + search)
       .then(props.setLoading(true))
+      .then(props.setPage(1))
       .then(res => res.json())
       .then(res => props.setQuotes(res))
       .then(setSearchResult(search))
       .then(props.setLoading(false));
+  }
+
+  // Clear search
+  const clearSearch = (event) => {
+    if (event) event.preventDefault();
+    return fetch('http://localhost:3001/quotes?_sort=' + sort)
+      .then(props.setLoading(true))
+      .then(setSearch(''))
+      .then(setSearchResult(''))
+      .then(props.setPage(1))
+      .then(res => res.json())
+      .then(res => props.setQuotes(res))
+      .then(props.setLoading(false));
+  }
+
+  // Handle changing the per page selection
+  const handlePerPage = (event) => {
+    if (event) event.preventDefault();
+    props.setPerPage(event.target.value);
+    props.setPage(1);
+  }
+
+  // Handle submitting a search
+  const handleSearch = (event) => {
+    if (event) event.preventDefault();
+    props.setPage(1);
+    searchQuotes();
   }
 
   return (
@@ -24,18 +53,19 @@ const SortBar = (props) => {
 
             <div className="uk-navbar-left">
               <form className="uk-flex-inline" onSubmit={searchQuotes}>
+              <select className="uk-select" value={props.perPage} onChange={handlePerPage}>
+                  <option value={10}>10 per page</option>
+                  <option value={20}>20 per page</option>
+                  <option value={50}>50 per page</option>
+                </select>
+              <span class="sort-divider">|</span>
                 <select className="uk-select" onChange={(event) => setSort(event.target.value)}>
                   <option value={'id&_order=desc'}>New to Old</option>
                   <option value={'id&_order=asc'}>Old to New</option>
                   <option value={'author&_order=asc'}>Author A-Z</option>
                   <option value={'author&_order=desc'}>Author Z-A</option>
                 </select>
-                <select className="uk-select" value={props.perPage} onChange={(event) => props.setPerPage(event.target.value)}>
-                  <option value="10">10 per page</option>
-                  <option value="20">20 per page</option>
-                  <option value="50">50 per page</option>
-                </select>
-                <button type="submit" className="uk-button uk-button-text">Update</button>
+                <button type="submit" className="uk-button uk-button-text">Sort</button>
               </form>
             </div>
 
@@ -45,18 +75,18 @@ const SortBar = (props) => {
 
             <div className="uk-navbar-right">
               <div className="uk-margin">
-                {searchResult && <a href="" type="submit" className="uk-button uk-button-text">clear search</a>}
-                <form className="uk-search uk-search-default" onSubmit={searchQuotes}>
+                {searchResult && <button href="" type="submit" className="uk-button uk-button-text" onClick={clearSearch}>clear search</button>}
+                <form className="uk-search uk-search-default" onSubmit={handleSearch}>
                   <button type="submit" href="" className="uk-button uk-button-link uk-search-icon-flip"><span className="search-button" uk-icon="icon: search; ratio: 1"></span></button>
-                  <input className="uk-search-input" type="search" placeholder="Search..." onChange={(event) => setSearch(event.target.value)} />
+                  <input className="uk-search-input" type="search" placeholder="Search..." value={search} onChange={(event) => setSearch(event.target.value)} />
                 </form>
               </div>
             </div>
           </div>
         </nav>
       </div>
-      {props.quotes.length > 0 && searchResult && <div id="search-results">Search: "{searchResult}"</div>}
       {props.quotes.length === 0 && searchResult && <div id="search-results"><br />There are no results containing "{searchResult}".<br />You can change that! Add a quote above.</div>}
+      {props.quotes.length > 0 && searchResult && <div id="search-results">Search: "{searchResult}"</div>}
     </React.Fragment>
   );
 };

@@ -8,9 +8,22 @@
 
 #search-results {
     width: 100%;
-    margin: 0px 0;    
+    margin: 0;    
     text-align: center;
     font-size: 24px;
+}
+
+h3 {
+    color: #777777;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.page-label {
+    margin: 20px auto -10px auto;
+    max-width: 20%;
+    text-align: center;
+    color: #777777;
+    margin-top: 20px;
 }
 
 /* Quotes */

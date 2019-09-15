@@ -58,7 +58,7 @@ const SortBar = (props) => {
                   <option value={20}>20 per page</option>
                   <option value={50}>50 per page</option>
                 </select>
-              <span class="sort-divider">|</span>
+              <span className="sort-divider">|</span>
                 <select className="uk-select" onChange={(event) => setSort(event.target.value)}>
                   <option value={'id&_order=desc'}>New to Old</option>
                   <option value={'id&_order=asc'}>Old to New</option>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/quote.css';
+
 const Quote = (quote) => {
   return (
     <div className='uk-card-body'>

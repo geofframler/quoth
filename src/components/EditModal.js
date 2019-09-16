@@ -93,7 +93,7 @@ function EditModal(props) {
               <button
                 type='submit'
                 className='edit-submit uk-button uk-button-primary' >
-                <div id='raven-success-edit' className={ravenSuccess}><img src={RavenSuccess} /></div>
+                <div id='raven-success-edit' className={ravenSuccess}><img src={RavenSuccess} alt='Raven Success' title='Success!' /></div>
                 Edit Quote
               </button>
             </form>

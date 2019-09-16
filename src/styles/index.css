@@ -31,33 +31,6 @@ h3 {
     margin-top: 20px;
 }
 
-/* Quotes */
-
-.quote {
-    max-width: 700px;
-    margin: 40px auto;
-}
-
-.quote-author {
-    margin: 15px 0 0 20px;
-    font-size: 18px;
-}
-
-.quote-source {
-    float: right;
-}
-
-.icon {
-    position: relative;
-    top: -2px;
-}
-
-.delete-drop-content {
-    width: 165px;
-    text-align: center;
-    transform: translate(67px, 0px);
-}
-
 /* UI Kit */
 
 .uk-logo {

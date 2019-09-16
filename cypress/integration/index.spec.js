@@ -1,4 +1,4 @@
-describe('visit quoth', () => {
+describe('Visit Quoth', () => {
   before(() => {
     cy.visit('/');
     cy.pause();

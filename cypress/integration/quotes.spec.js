@@ -1,4 +1,4 @@
-describe('crud quotes', () => {
+describe('CRUD Quotes', () => {
   const quoteBody       = 'This is a test.'
   const quoteAuthor     = 'Cypress'
   const quoteSource     = 'https://cypress.com'

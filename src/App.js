@@ -62,7 +62,7 @@ function App() {
 
             {currentQuotes.map((quote) => {
               return (
-                <div className='quote' key={quote.id}>
+                <div id={'quote-' + quote.id} className='quote' key={quote.id}>
                   <div className='uk-card uk-card-small uk-card-default uk-card-hover'>
                     <Quote
                       id={quote.id}

@@ -7,7 +7,7 @@ const SortBar = (props) => {
   const [searchResult, setSearchResult] = useState('');
 
   // Submit a search query
-  const searchQuotes = (event) => {
+  const sortQuotes = (event) => {
     if (event) event.preventDefault();
     return fetch('http://localhost:3001/quotes?_sort=' + sort + '&q=' + search)
       .then(props.setLoading(true))
@@ -42,7 +42,7 @@ const SortBar = (props) => {
   const handleSearch = (event) => {
     if (event) event.preventDefault();
     props.setPage(1);
-    searchQuotes();
+    sortQuotes();
   }
 
   return (
@@ -52,20 +52,20 @@ const SortBar = (props) => {
           <div className='sort-bar uk-flex'>
 
             <div className='uk-navbar-left'>
-              <form className='uk-flex-inline' onSubmit={searchQuotes}>
-              <select className='uk-select' value={props.perPage} onChange={handlePerPage}>
+              <form className='uk-flex-inline' onSubmit={sortQuotes}>
+              <select id='per-page-select' className='uk-select' value={props.perPage} onChange={handlePerPage}>
                   <option value={10}>10 per page</option>
                   <option value={20}>20 per page</option>
                   <option value={50}>50 per page</option>
                 </select>
               <span className='sort-divider'>|</span>
-                <select className='uk-select' onChange={(event) => setSort(event.target.value)}>
+                <select id='sort-select' className='uk-select' onChange={(event) => setSort(event.target.value)}>
                   <option value={'id&_order=desc'}>New to Old</option>
                   <option value={'id&_order=asc'}>Old to New</option>
                   <option value={'author&_order=asc'}>Author A-Z</option>
                   <option value={'author&_order=desc'}>Author Z-A</option>
                 </select>
-                <button type='submit' className='uk-button uk-button-text'>Sort</button>
+                <button type='submit' className='sort-button uk-button uk-button-text'>Sort</button>
               </form>
             </div>
 

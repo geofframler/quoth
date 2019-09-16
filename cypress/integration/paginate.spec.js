@@ -58,6 +58,48 @@ describe('Paginate Quotes', () => {
       .contains('Page 1');
   });
 
+  it('only displays previous icon after first page', () => {
+    cy.get('#previous-icon')
+      .should('not.exist');
+    
+    cy.get('#page-link-2 > button').first()
+      .click()
+      .wait(100);
+
+    cy.get('#previous-icon')
+      .should('exist');
+    
+    cy.get('#page-link-1 > button').first()
+      .click()
+      .wait(100);
+
+    cy.get('#previous-icon')
+      .should('not.exist');
+  });
+
+  it('only displays next icon after first page', () => {
+    cy.get('#next-icon')
+      .should('exist');
+    
+    cy.get('#page-links').first()
+      .find('#next-icon')
+      .prevUntil('#page-link-1')
+      .first()
+      .find('button')
+      .click()
+      .wait(100);
+
+    cy.get('#next-icon')
+      .should('not.exist');
+    
+    cy.get('#page-link-1 > button').first()
+      .click()
+      .wait(100);
+
+    cy.get('#next-icon')
+      .should('exist');
+  });
+
   it('clicks through each page link', () => {
     cy.get('#next-icon').first()
       .prevUntil('#page-link-1')

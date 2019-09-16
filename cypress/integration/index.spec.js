@@ -1,10 +1,10 @@
 describe('Visit Quoth', () => {
   before(() => {
     cy.visit('/');
-    cy.pause();
   });
 
   it('renders nav', () => {
+    cy.pause();
     cy.get('.uk-navbar-left')
       .should('exist');
   });

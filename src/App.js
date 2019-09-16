@@ -85,14 +85,12 @@ function App() {
               );
             })}
 
-            
-
-          </div>
-          <Pagination
+            <Pagination
               page={page}
               perPage={perPage}
               totalQuotes={quotes.length}
               paginate={paginate} />
+          </div>
         </React.Fragment>
       }
     </div>

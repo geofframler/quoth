@@ -146,7 +146,7 @@ describe('CRUD Quotes', () => {
   });
 
 
-  context('deletes posted quote', function() {
+  context('destroys quote', function() {
     it('checks that delete drop of posted quote is hidden', () => {
       cy.get('.quote')
         .first()

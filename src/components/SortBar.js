@@ -70,14 +70,14 @@ const SortBar = (props) => {
             </div>
 
             <div className='uk-navbar-center'>
-              <button id='js-scroll-trigger' className='uk-button uk-button-link' href='' uk-scroll='true' uk-totop='true' duration='500' />
+              <button id='js-scroll-trigger' className='uk-button uk-button-link'  uk-scroll='true' uk-totop='true' duration='500' />
             </div>
 
             <div className='uk-navbar-right'>
               <div className='uk-margin'>
-                {searchResult && <button href='' type='submit' className='uk-button uk-button-text' onClick={clearSearch}>clear search</button>}
+                {searchResult && <button  type='submit' className='uk-button uk-button-text' onClick={clearSearch}>clear search</button>}
                 <form className='uk-search uk-search-default' onSubmit={handleSearch}>
-                  <button type='submit' href='' className='uk-button uk-button-link uk-search-icon-flip'><span className='search-button' uk-icon='icon: search; ratio: 1'></span></button>
+                  <button type='submit'  className='uk-button uk-button-link uk-search-icon-flip'><span className='search-button' uk-icon='icon: search; ratio: 1'></span></button>
                   <input className='uk-search-input' type='search' placeholder='Search...' value={search} onChange={(event) => setSearch(event.target.value)} />
                 </form>
               </div>

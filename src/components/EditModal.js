@@ -49,13 +49,13 @@ function EditModal(props) {
           <h2 className='uk-modal-title'>Edit this {editInputs.author} quote:</h2>
         </div>
         <div className='uk-modal-body'>
-          <div id='input-form'>
+          <div id='input-form' className='edit-form'>
 
             <form onSubmit={handleSubmit} autoComplete='off'>
 
               <label>Quote</label>
               <textarea
-                className='input-form-body uk-textarea'
+                className='edit-body input-form-body uk-textarea'
                 type='text'
                 name='body'
                 placeholder='Put your quote here!'
@@ -67,7 +67,7 @@ function EditModal(props) {
 
               <label>Author</label>
               <input
-                className='input-form-author uk-input'
+                className='edit-author input-form-author uk-input'
                 type='text'
                 name='author'
                 placeholder='Author Name'
@@ -77,7 +77,7 @@ function EditModal(props) {
 
               <label>Source</label>
               <input
-                className='input-form-source uk-input'
+                className='edit-source input-form-source uk-input'
                 type='text'
                 name='source'
                 placeholder='https://url.of/author'
@@ -86,13 +86,13 @@ function EditModal(props) {
               <br />
 
               <button
-                className='uk-button uk-button-default uk-modal-close'
+                className='edit-close uk-button uk-button-default uk-modal-close'
                 type='button'>
                 Close
               </button>
               <button
                 type='submit'
-                className='uk-button uk-button-primary' >
+                className='edit-submit uk-button uk-button-primary' >
                 <div id='raven-success-edit' className={ravenSuccess}><img src={RavenSuccess} /></div>
                 Edit Quote
               </button>

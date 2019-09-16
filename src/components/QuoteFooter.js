@@ -21,8 +21,8 @@ const Quote = ({ getQuotes, id }) => {
         type='button'>
         Delete <span className='icon' uk-icon='icon: trash; ratio: .8'></span>
       </button>
-      <div uk-drop='mode: click; pos: top; animation: uk-animation-slide-bottom-small; duration: 500'>
-        <div className='delete-drop uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover'>
+      <div className='delete-drop' uk-drop='mode: click; pos: top; animation: uk-animation-slide-bottom-small; duration: 500;'>
+        <div className='delete-drop-content uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover'>
           <h5>Are you sure?</h5>
           <button
             onClick={() => deleteQuote(id)}

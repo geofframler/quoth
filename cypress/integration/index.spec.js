@@ -1,18 +1,28 @@
-describe('Visit Quotes', () => {
+describe('visit quoth', () => {
   before(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
+    cy.pause();
   });
 
-  it('Renders', () => {
-    cy.get('a').contains('Quotes');
+  it('renders nav', () => {
+    cy.get('.uk-navbar-left')
+      .should('exist');
   });
 
-  it('GETs quote list from server', () => {
-    cy.request('GET', 'http://localhost:3001/quotes?_sort=id&_order=desc');
+  it('renders new quote form', () => {
+    cy.get('.input-form-wrapper')
+      .should('exist');
   });
 
-  it('Renders list of quotes', () => {
-    cy.get('#quote-list');
+  it('renders sort bar', () => {
+    cy.get('.sort-bar')
+      .should('exist');
+  });
+
+  it('renders quotes', () => {
+    cy.get('#quote-list')
+      .find('.quote')
+      .should('exist');
   })
 
 });

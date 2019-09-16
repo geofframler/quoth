@@ -53,7 +53,7 @@ function InputForm({ getQuotes }) {
 
   return (
     <div className='input-form-wrapper uk-card uk-card-body uk-card-small uk-card-primary uk-card-hover'>
-      <div id='input-form'>
+      <div id='input-form' className='post-form'>
         <form onSubmit={handleSubmit} autoComplete='off'>
           <label>Quote</label>
           <div className='quotation-mark-left'><span uk-icon='icon: quote-right; ratio: 4'></span></div>

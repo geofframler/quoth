@@ -85,8 +85,8 @@ const SortBar = (props) => {
           </div>
         </nav>
       </div>
-      {props.quotes.length === 0 && searchResult && <div id='search-results'><br />There are no results containing '{searchResult}'.<br />You can change that! Add a quote above.</div>}
-      {props.quotes.length > 0 && searchResult && <div id='search-results'>Search: '{searchResult}'</div>}
+      {props.quotes.length === 0 && searchResult && <div id='search-results'><br />There are no results containing "{searchResult}".<br />You can change that! Add a quote above.</div>}
+      {props.quotes.length > 0 && searchResult && <div id='search-results'>Search: "{searchResult}"</div>}
     </React.Fragment>
   );
 };

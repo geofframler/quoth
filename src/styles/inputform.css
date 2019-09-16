@@ -106,6 +106,7 @@ form label {
     margin-bottom: -42px;
     opacity: 0;
     transition: opacity .3s, top .3s;
+    pointer-events: none;
 }
 
 #raven-success-edit {
@@ -139,4 +140,8 @@ form label {
 
 .uk-button {
     margin: 0 5px;
+}
+
+.uk-modal-body {
+    padding-top: 14px;
 }

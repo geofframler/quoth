@@ -3,7 +3,7 @@ import React from 'react';
 const Quote = (quote) => {
   return (
     <div className='uk-card-body'>
-      <div className='quote-body uk-card-title'>'{quote.body}'</div>
+      <div className='quote-body uk-card-title'>"{quote.body}"</div>
       <div className='quote-author'>
         - {quote.author}
       </div>

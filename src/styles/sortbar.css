@@ -48,7 +48,7 @@
     width: 200px;
 }
 
-#js-scroll-trigger {
+.sort-bar #js-scroll-trigger {
     display: none;
 }
 
@@ -61,5 +61,14 @@
 @media only screen and (max-width: 700px) {
     .uk-navbar-sticky #js-scroll-trigger {
         display: none;
+    }
+
+    #footer #js-scroll-trigger {
+        margin-top: 5px;
+    }
+
+    .back-to-top-text {
+        display: none;
+        margin: 0;
     }
 }

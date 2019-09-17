@@ -6,6 +6,7 @@ import Quote from './components/Quote';
 import QuoteFooter from './components/QuoteFooter';
 import EditModal from './components/EditModal';
 import Pagination from './components/Pagination';
+import Footer from './components/Footer';
 
 function App() {
   const [quotes, setQuotes] = useState([]);
@@ -93,6 +94,8 @@ function App() {
           </div>
         </React.Fragment>
       }
+
+      <Footer />
     </div>
   )
 }

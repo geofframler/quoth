@@ -25,4 +25,9 @@ describe('Visit Quoth', () => {
       .should('exist');
   })
 
+  it('renders footer', () => {
+    cy.get('#footer')
+      .should('exist');
+  });
+
 });

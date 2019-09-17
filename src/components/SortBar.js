@@ -70,7 +70,7 @@ const SortBar = (props) => {
             </div>
 
             <div className='uk-navbar-center'>
-              <button id='js-scroll-trigger' className='uk-button uk-button-link'  uk-scroll='true' uk-totop='true' duration='500' />
+              <button id='js-scroll-trigger' className='uk-button uk-button-link' uk-scroll='true' uk-totop='true' duration='500' />
             </div>
 
             <div className='uk-navbar-right'>

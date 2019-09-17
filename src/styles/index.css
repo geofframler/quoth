@@ -1,5 +1,10 @@
 /* Index */
 
+#app {
+    height: 100%;
+    background-color: #dedede;
+}
+
 #raven-logo {
     width: 50px;
     margin-right: 10px;
@@ -13,6 +18,7 @@
 
 #search-results {
     width: 100%;
+    min-height: 100%;
     margin: 0;    
     text-align: center;
     font-size: 24px;
@@ -36,6 +42,20 @@ h3 {
     display: flex;
     align-items: center;
     height: 26px;
+}
+
+#footer {
+    margin-top: 40px;
+}
+
+.footer-right {
+    margin-top: -6px;
+}
+.back-to-top-text {
+    position: absolute;
+    width: 60px;
+    top: 0;
+    left: 30px;
 }
 
 /* UI Kit */

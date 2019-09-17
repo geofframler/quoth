@@ -1,4 +1,4 @@
-/* Default */ 
+/* Input Form */
 
 textarea {
     height: 100px;
@@ -9,8 +9,6 @@ textarea {
 form label {
     display:none;
 }
-
-/* Input Form */
 
 #input-form {
     text-align:center;

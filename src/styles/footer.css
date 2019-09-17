@@ -1,0 +1,16 @@
+/* Footer */
+
+#footer {
+    margin-top: 40px;
+}
+
+.footer-right {
+    margin-top: -6px;
+}
+
+.back-to-top-text {
+    position: absolute;
+    width: 60px;
+    top: 0;
+    left: 30px;
+}

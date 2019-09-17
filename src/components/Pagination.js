@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/pagination.css';
+
 const Pagination = ({ page, perPage, totalQuotes, paginate }) => {
   const pageNumbers = [];
 

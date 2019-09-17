@@ -32,36 +32,6 @@ h3 {
     font-size: 24px;
 }
 
-.page-label {
-    font-size: 1.1em;
-    margin: 0 auto -10px auto;
-    max-width: 20%;
-    text-align: center;
-    color: #777777;
-    margin-top: 20px;
-}
-
-#page-links {
-    display: flex;
-    align-items: center;
-    height: 26px;
-}
-
-#footer {
-    margin-top: 40px;
-}
-
-.footer-right {
-    margin-top: -6px;
-}
-
-.back-to-top-text {
-    position: absolute;
-    width: 60px;
-    top: 0;
-    left: 30px;
-}
-
 /* UI Kit */
 
 .uk-logo {

@@ -1,0 +1,16 @@
+/* Pagination */
+
+.page-label {
+    font-size: 1.1em;
+    margin: 0 auto -10px auto;
+    max-width: 20%;
+    text-align: center;
+    color: #777777;
+    margin-top: 20px;
+}
+
+#page-links {
+    display: flex;
+    align-items: center;
+    height: 26px;
+}

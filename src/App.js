@@ -14,6 +14,13 @@ function App() {
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(20);
 
+  // Get current quotes per page
+  const indexOfLastPost = page * perPage;
+  const indexOfFirstPost = indexOfLastPost - perPage;
+  const currentQuotes = quotes.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = (pageNumber) => setPage(pageNumber);
 
   // Fetch quotes from server
   const getQuotes = () => {
@@ -27,14 +34,6 @@ function App() {
   useEffect(() => {
     getQuotes();
   }, []);
-
-  // Get current quotes per page
-  const indexOfLastPost = page * perPage;
-  const indexOfFirstPost = indexOfLastPost - perPage;
-  const currentQuotes = quotes.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Change page
-  const paginate = (pageNumber) => setPage(pageNumber);
 
   return (
     <div id='app'>
@@ -51,50 +50,54 @@ function App() {
         perPage={perPage}
         setPerPage={setPerPage} />
 
-      {loading ? <div id='loading'><h3>Loading Quotes</h3><span uk-spinner='ratio: 4.5'></span></div> :
-        <React.Fragment>
-          <div id='quote-list' uk-scrollspy='target: > div; cls: uk-animation-slide-top-small; delay: 20'>
+      {loading ? 
+        <div id='loading'>
+          <h3>Loading Quotes</h3>
+          <span id='loading-spinner' uk-spinner='ratio: 4' />
+        </div> :
+        <div id='quote-list' 
+             uk-scrollspy='target: > div; cls: uk-animation-slide-top-small; delay: 20'>
 
-            <Pagination
-              page={page}
-              perPage={perPage}
-              totalQuotes={quotes.length}
-              paginate={paginate} />
+          <Pagination
+            page={page}
+            perPage={perPage}
+            totalQuotes={quotes.length}
+            paginate={paginate} />
 
-            {currentQuotes.map((quote) => {
-              return (
-                <div id={'quote-' + quote.id} className='quote' key={quote.id}>
-                  <div className='uk-card uk-card-small uk-card-default uk-card-hover'>
-                    <Quote
-                      id={quote.id}
-                      body={quote.body}
-                      author={quote.author}
-                      source={quote.source} />
+          {currentQuotes.map((quote) => {
+            return (
+              <div id={'quote-' + quote.id} 
+                   className='quote' 
+                   key={quote.id}>
+                <div className='uk-card uk-card-small uk-card-default uk-card-hover'>
+                  <Quote
+                    id={quote.id}
+                    body={quote.body}
+                    author={quote.author}
+                    source={quote.source} />
 
-                    <QuoteFooter
-                      getQuotes={getQuotes}
-                      id={quote.id} />
+                  <QuoteFooter
+                    getQuotes={getQuotes}
+                    id={quote.id} />
 
-                    <EditModal
-                      getQuotes={getQuotes}
-                      id={quote.id}
-                      body={quote.body}
-                      author={quote.author}
-                      source={quote.source} />
-                  </div>
+                  <EditModal
+                    getQuotes={getQuotes}
+                    id={quote.id}
+                    body={quote.body}
+                    author={quote.author}
+                    source={quote.source} />
                 </div>
-              );
-            })}
+              </div>
+            );
+          })}
 
-            <Pagination
-              page={page}
-              perPage={perPage}
-              totalQuotes={quotes.length}
-              paginate={paginate} />
-          </div>
-        </React.Fragment>
+          <Pagination
+            page={page}
+            perPage={perPage}
+            totalQuotes={quotes.length}
+            paginate={paginate} />
+        </div>
       }
-
       <Footer />
     </div>
   )

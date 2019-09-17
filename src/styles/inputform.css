@@ -6,10 +6,6 @@ textarea {
     resize: none;
 }
 
-h2 {
-    color: white;
-}
-
 form label {
     display:none;
 }
@@ -116,24 +112,6 @@ form label {
 .raven-success-show {
     top: 0 !important;
     opacity: 1 !important;
-}
-
-/* Alert */
-
-.alert-hide {
-    height: 0px;
-    margin: -25px 0 15px 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: height 1s, opacity .5s;
-}
-
-.alert-show {
-    height: 60px !important;
-    margin: -25px 0 15px 0;
-    overflow: hidden;
-    opacity: 1;
-    transition: height .5s, opacity 1s;
 }
 
 /* UI Kit */

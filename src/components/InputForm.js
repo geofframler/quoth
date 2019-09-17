@@ -36,7 +36,9 @@ function InputForm({ getQuotes }) {
   // Update state on form input
   const handleInputChange = (event) => {
     event.persist();
-    setInputs(inputs => ({ ...inputs, [event.target.name]: event.target.value }));
+    setInputs(inputs => ({ 
+      ...inputs, [event.target.name]: event.target.value 
+    }));
   }
 
   // Handle the form submission for adding a new post
@@ -52,12 +54,17 @@ function InputForm({ getQuotes }) {
   }
 
   return (
-    <div className='input-form-wrapper uk-card uk-card-body uk-card-small uk-card-primary uk-card-hover'>
+    <div className='input-form-wrapper uk-card uk-card-body uk-card-small 
+                    uk-card-primary uk-card-hover'>
       <div id='input-form' className='post-form'>
         <form onSubmit={handleSubmit} autoComplete='off'>
           <label>Quote</label>
-          <div className='quotation-mark-left'><span uk-icon='icon: quote-right; ratio: 4'></span></div>
-          <div className='quotation-mark-right'><span uk-icon='icon: quote-right; ratio: 4'></span></div>
+          <div className='quotation-mark-left'>
+            <span uk-icon='icon: quote-right; ratio: 4' />
+          </div>
+          <div className='quotation-mark-right'>
+            <span uk-icon='icon: quote-right; ratio: 4' />
+          </div>
           <textarea
             className='post-body input-form-body uk-textarea'
             type='text'
@@ -92,7 +99,12 @@ function InputForm({ getQuotes }) {
           <button
             type='submit'
             className='post-button uk-button uk-button-primary'>
-            <div id='raven-success' className={ravenSuccess}><img src={RavenSuccess} alt='Raven Success' title='Success!' /></div>
+            <div id='raven-success' 
+                 className={ravenSuccess}>
+              <img src={RavenSuccess} 
+                   alt='Raven Success' 
+                   title='Success!' />
+            </div>
             Add A Quote
           </button>
         </form>

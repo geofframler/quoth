@@ -5,7 +5,10 @@ import '../styles/inputform.css';
 import RavenSuccess from '../raven-success.png';
 
 function EditModal(props) {
-  const [editInputs, setEditInputs] = useState({ id: props.id, body: props.body, author: props.author, source: props.source });
+  const [editInputs, setEditInputs] = useState({ id: props.id, 
+                                                 body: props.body, 
+                                                 author: props.author, 
+                                                 source: props.source });
   const [ravenSuccess, setRavenSuccess] = useState('');
 
   // Edit an existing quote in the database
@@ -27,7 +30,9 @@ function EditModal(props) {
   // Update state on form input
   const handleInputChange = (event) => {
     event.persist();
-    setEditInputs(editInputs => ({ ...editInputs, [event.target.name]: event.target.value }));
+    setEditInputs(editInputs => ({ 
+      ...editInputs, [event.target.name]: event.target.value 
+    }));
   }
 
   // Handle the form submission for editing a quote
@@ -42,11 +47,17 @@ function EditModal(props) {
   }
 
   return (
-    <div id={'edit-' + props.id} className='uk-modal uk-flex-top' uk-modal='true'>
+    <div id={'edit-' + props.id} 
+         className='uk-modal uk-flex-top' 
+         uk-modal='true'>
       <div className='uk-modal-dialog uk-margin-auto-vertical'>
-        <button className='uk-modal-close-default' type='button' uk-close='true'></button>
+        <button className='uk-modal-close-default' 
+                type='button' 
+                uk-close='true' />
         <div className='uk-modal-header'>
-          <h2 className='uk-modal-title'>Edit this {editInputs.author} quote:</h2>
+          <h2 className='uk-modal-title'>
+            Edit this {editInputs.author} quote:
+          </h2>
         </div>
         <div className='uk-modal-body'>
           <div id='input-form' className='edit-form'>
@@ -93,7 +104,12 @@ function EditModal(props) {
               <button
                 type='submit'
                 className='edit-submit uk-button uk-button-primary' >
-                <div id='raven-success-edit' className={ravenSuccess}><img src={RavenSuccess} alt='Raven Success' title='Success!' /></div>
+                <div id='raven-success-edit' 
+                     className={ravenSuccess}>
+                  <img src={RavenSuccess} 
+                       alt='Raven Success' 
+                       title='Success!' />
+                </div>
                 Edit Quote
               </button>
             </form>

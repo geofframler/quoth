@@ -44,12 +44,22 @@ form label {
     float: right;
 }
 
+.input-form-source {
+    padding-right: 34px;
+}
+
 .source-link-show, .source-field-show {
     display: block;
 }
 
 .source-link-hide, .source-field-hide {
     display: none;
+}
+
+.close-button {
+    position: relative;
+    top: 6px;
+    left: 232px;
 }
 
 /* Visual additions */
@@ -120,4 +130,10 @@ form label {
 
 .uk-modal-body {
     padding-top: 14px;
+}
+
+@media only screen and (max-width: 665px) {
+    .quotation-mark-left, .quotation-mark-right, .author-hyphen {
+        display:none;
+    }
 }

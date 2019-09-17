@@ -30,7 +30,17 @@ function InputForm({ getQuotes }) {
   const setSource = (event) => {
     if (event) event.preventDefault();
     setSourceLink('source-link-hide');
-    setSourceField('source-field-show')
+    setSourceField('source-field-show');
+  }
+
+  // Hide the form for adding a cited source
+  const removeSource = (event) => {
+    if (event) event.preventDefault();
+    setSourceLink('source-link-show');
+    setSourceField('source-field-hide');
+    setInputs(inputs => ({ 
+      ...inputs, source: ''
+    }));
   }
 
   // Update state on form input
@@ -46,6 +56,7 @@ function InputForm({ getQuotes }) {
     if (event) event.preventDefault();
     postQuote(inputs)
       .then(() => setInputs({ body: '', author: '', source: '' }))
+      .then(() => removeSource())
       .then(() => getQuotes())
       .then(() => setRavenSuccess('raven-success-show'))
       .then(() => setTimeout(() => {
@@ -86,15 +97,26 @@ function InputForm({ getQuotes }) {
             required />
           <label>Source</label>
           <div className={'source-link ' + sourceLink}>
-            <a href='/#' onClick={setSource}>Add Citation</a>
+            <button className="uk-button uk-button-text"
+                    onClick={setSource}>
+              Add Citation
+            </button>
           </div>
-          <input
-            className={'post-source input-form-source uk-input ' + sourceField}
-            type='text'
-            name='source'
-            placeholder='https://url.of/author'
-            onChange={handleInputChange}
-            value={inputs.source} />
+          <div className={sourceField}>
+            <button className='uk-button uk-button-link 
+                               uk-search-icon-flip'
+                    onClick={removeSource}>
+              <span className='close-button' 
+                  uk-icon='icon: close; ratio: 1' />
+            </button>
+            <input
+              className='post-source input-form-source uk-input'
+              type='text'
+              name='source'
+              placeholder='https://url.of/author'
+              onChange={handleInputChange}
+              value={inputs.source} />
+          </div>
           <br />
           <button
             type='submit'

@@ -13,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(20);
+  const [searchResult, setSearchResult] = useState('');
 
   // Get current quotes per page
   const indexOfLastPost = page * perPage;
@@ -27,12 +28,14 @@ function App() {
     return fetch('http://localhost:3001/quotes?_sort=id&_order=desc')
       .then(res => res.json())
       .then(res => setQuotes(res))
-      .then(setLoading(false));
+      .then(setTimeout(() => {
+          setLoading(false);
+        }, 100));
   }
 
   // Get default quote list on page load
   useEffect(() => {
-    getQuotes();
+    getQuotes(); 
   }, []);
 
   return (
@@ -45,10 +48,12 @@ function App() {
         quotes={quotes}
         setQuotes={setQuotes}
         getQuotes={getQuotes}
-        setPage={setPage}
         setLoading={setLoading}
+        setPage={setPage}
         perPage={perPage}
-        setPerPage={setPerPage} />
+        setPerPage={setPerPage}
+        searchResult={searchResult}
+        setSearchResult={setSearchResult} />
 
       {loading ? 
         <div id='loading'>
@@ -56,7 +61,9 @@ function App() {
           <span id='loading-spinner' uk-spinner='ratio: 4' />
         </div> :
         <div id='quote-list' 
-             uk-scrollspy='target: > div; cls: uk-animation-slide-top-small; delay: 20'>
+             uk-scrollspy='target: > div; 
+                           cls: uk-animation-slide-top-small; 
+                           delay: 20'>
 
           <Pagination
             page={page}
@@ -98,6 +105,14 @@ function App() {
             paginate={paginate} />
         </div>
       }
+
+      {!loading && quotes.length === 0 && !searchResult &&
+        <div id='cant-load'>
+          <h3>Unable to connect to the server.
+          <br />Please try again later.</h3>
+        </div>
+      }
+
       <Footer />
     </div>
   )

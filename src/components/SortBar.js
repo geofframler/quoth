@@ -4,7 +4,6 @@ import '../styles/sortbar.css';
 const SortBar = (props) => {
   const [sort, setSort] = useState('id&_order=desc');
   const [search, setSearch] = useState('');
-  const [searchResult, setSearchResult] = useState('');
 
   // Submit a search query
   const sortQuotes = (event) => {
@@ -14,7 +13,7 @@ const SortBar = (props) => {
       .then(props.setPage(1))
       .then(res => res.json())
       .then(res => props.setQuotes(res))
-      .then(setSearchResult(search))
+      .then(props.setSearchResult(search))
       .then(props.setLoading(false));
   }
 
@@ -24,7 +23,7 @@ const SortBar = (props) => {
     return fetch('http://localhost:3001/quotes?_sort=' + sort)
       .then(props.setLoading(true))
       .then(setSearch(''))
-      .then(setSearchResult(''))
+      .then(props.setSearchResult(''))
       .then(props.setPage(1))
       .then(res => res.json())
       .then(res => props.setQuotes(res))
@@ -89,7 +88,7 @@ const SortBar = (props) => {
 
             <div className='uk-navbar-right'>
               <div className='uk-margin'>
-                {searchResult && 
+                {props.searchResult && 
                   <button type='submit' 
                           className='uk-button uk-button-text' 
                           onClick={clearSearch}>
@@ -115,15 +114,15 @@ const SortBar = (props) => {
           </div>
         </nav>
       </div>
-      {props.quotes.length === 0 && searchResult && 
+      {props.quotes.length === 0 && props.searchResult && 
         <div id='search-results'>
-          <br /><br />There are no results containing "{searchResult}".
+          <br /><br />There are no results containing "{props.searchResult}".
           <br />You can change that! Add a quote above.
         </div>
       }
-      {props.quotes.length > 0 && searchResult && 
+      {props.quotes.length > 0 && props.searchResult && 
         <div id='search-results'>
-          Search: "{searchResult}"
+          <br />Search: "{props.searchResult}"
         </div>
       }
     </React.Fragment>

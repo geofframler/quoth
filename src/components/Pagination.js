@@ -22,7 +22,8 @@ const Pagination = ({ page, perPage, totalQuotes, paginate }) => {
           Page {page}
         </div>
       }
-      <ul id='page-links' className='uk-pagination uk-flex-center'>
+      <ul id='page-links' 
+          className='uk-pagination uk-flex-center'>
         {totalQuotes > perPage && page > 1 && 
           <li id='previous-icon'>
             <button className='uk-button uk-button-text' 

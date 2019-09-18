@@ -104,7 +104,10 @@ function App() {
       }
 
       {!loading && quotes.length === 0 && !searchResult &&
-        <div id='cant-load'>
+        <div id='cant-load'
+             uk-scrollspy='target: > h3; 
+                           cls: uk-animation-fade uk-animation-fast; 
+                           delay: 200'>
           <h3>Unable to connect to the server.
           <br />Please try again later.</h3>
         </div>

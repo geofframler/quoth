@@ -5,7 +5,7 @@ const SortBar = (props) => {
   const [sort, setSort] = useState('id&_order=desc');
   const [search, setSearch] = useState('');
 
-  // Submit a search query
+  // Submit a sort query
   const sortQuotes = (event) => {
     if (event) event.preventDefault();
     return fetch('http://localhost:3001/quotes?_sort=' + sort + '&q=' + search)
@@ -40,7 +40,6 @@ const SortBar = (props) => {
   // Handle submitting a search
   const handleSearch = (event) => {
     if (event) event.preventDefault();
-    props.setPage(1);
     sortQuotes();
   }
 

@@ -64,8 +64,8 @@ function App() {
 
           <Pagination
             page={page}
-            perPage={perPage}
             setPage={setPage}
+            perPage={perPage}
             totalQuotes={quotes.length} />
 
           {currentQuotes.map((quote) => {
@@ -97,8 +97,8 @@ function App() {
 
           <Pagination
             page={page}
-            perPage={perPage}
             setPage={setPage}
+            perPage={perPage}
             totalQuotes={quotes.length} />
         </div>
       }

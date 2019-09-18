@@ -42,7 +42,7 @@ function EditModal(props) {
       .then(() => props.getQuotes())
       .then(() => setRavenSuccess('raven-success-show'))
       .then(() => setTimeout(() => {
-        setRavenSuccess('')
+        setRavenSuccess('');
       }, 3000));
   }
 

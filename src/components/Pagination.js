@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/pagination.css';
 
-const Pagination = ({ page, perPage, setPage, totalQuotes }) => {
+const Pagination = ({ page, setPage, perPage, totalQuotes }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalQuotes / perPage); i++) {

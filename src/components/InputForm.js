@@ -60,7 +60,7 @@ function InputForm({ getQuotes }) {
       .then(() => getQuotes())
       .then(() => setRavenSuccess('raven-success-show'))
       .then(() => setTimeout(() => {
-        setRavenSuccess('')
+        setRavenSuccess('');
       }, 3000));
   }
 

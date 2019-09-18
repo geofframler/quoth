@@ -10,7 +10,7 @@ describe('Search Quotes', () => {
     cy.get('.uk-search-input')
       .type(badSearch)
       .should('have.value', badSearch)
-      .wait(500);;
+      .wait(500);
   });
 
   it('returns no search results', () => {
@@ -28,10 +28,11 @@ describe('Search Quotes', () => {
       .clear()
       .wait(200)
       .type(goodSearch)
-      .wait(500);;
+      .wait(500);
 
     cy.get('.uk-search > .uk-button')
-      .click();
+      .click()
+      .wait(500);
 
     cy.get('#search-results')
       .should('contain', goodSearch);

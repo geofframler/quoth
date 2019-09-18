@@ -20,17 +20,14 @@ function App() {
   const indexOfFirstPost = indexOfLastPost - perPage;
   const currentQuotes = quotes.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
-  const paginate = (pageNumber) => setPage(pageNumber);
-
-  // Fetch quotes from server
+  // Fetch quotes from server (simulate 300ms of loading)
   const getQuotes = () => {
     return fetch('http://localhost:3001/quotes?_sort=id&_order=desc')
       .then(res => res.json())
       .then(res => setQuotes(res))
       .then(setTimeout(() => {
-          setLoading(false);
-        }, 100));
+              setLoading(false);
+            }, 300));
   }
 
   // Get default quote list on page load
@@ -68,8 +65,8 @@ function App() {
           <Pagination
             page={page}
             perPage={perPage}
-            totalQuotes={quotes.length}
-            paginate={paginate} />
+            setPage={setPage}
+            totalQuotes={quotes.length} />
 
           {currentQuotes.map((quote) => {
             return (
@@ -101,8 +98,8 @@ function App() {
           <Pagination
             page={page}
             perPage={perPage}
-            totalQuotes={quotes.length}
-            paginate={paginate} />
+            setPage={setPage}
+            totalQuotes={quotes.length} />
         </div>
       }
 

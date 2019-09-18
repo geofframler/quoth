@@ -76,6 +76,7 @@ function InputForm({ getQuotes }) {
           <div className='quotation-mark-right'>
             <span uk-icon='icon: quote-right; ratio: 4' />
           </div>
+
           <textarea
             className='post-body input-form-body uk-textarea'
             type='text'
@@ -85,6 +86,7 @@ function InputForm({ getQuotes }) {
             value={inputs.body}
             autoFocus
             required />
+
           <label>Author</label>
           <div className='author-hyphen'>-</div>
           <input
@@ -95,6 +97,7 @@ function InputForm({ getQuotes }) {
             onChange={handleInputChange}
             value={inputs.author}
             required />
+
           <label>Source</label>
           <div className={'source-link ' + sourceLink}>
             <button className="uk-button uk-button-text"
@@ -117,7 +120,7 @@ function InputForm({ getQuotes }) {
               onChange={handleInputChange}
               value={inputs.source} />
           </div>
-          <br />
+
           <button
             type='submit'
             className='post-button uk-button uk-button-primary'>

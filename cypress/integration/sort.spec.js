@@ -13,7 +13,8 @@ describe('Sort Quotes', () => {
     .select('id&_order=asc');
 
     cy.get('.sort-button')
-      .click();
+      .click()
+      .wait(500);
 
     cy.get('.quote')
       .first()
@@ -25,7 +26,8 @@ describe('Sort Quotes', () => {
     .select('author&_order=asc');
 
     cy.get('.sort-button')
-      .click();
+      .click()
+      .wait(500);
 
     cy.get('.quote-author').should(($author) => {
       expect($author.get(0).innerText).to.contain('- A')
@@ -37,7 +39,8 @@ describe('Sort Quotes', () => {
     .select('author&_order=desc');
 
     cy.get('.sort-button')
-      .click();
+      .click()
+      .wait(500);
 
     cy.get('.quote-author').should(($author) => {
       expect($author.get(0).innerText).to.contain('- Z')
@@ -49,7 +52,8 @@ describe('Sort Quotes', () => {
       .select('id&_order=desc');
 
     cy.get('.sort-button')
-      .click();
+      .click()
+      .wait(500);
 
     cy.get('.quote')
       .first()

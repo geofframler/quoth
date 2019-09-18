@@ -11,12 +11,12 @@ const Quote = ({ getQuotes, id }) => {
 
   return (
     <div className='uk-card-footer'>
-      <a href='#/'
+      <button
         className='edit-link uk-button uk-button-text uk-float-left'
         uk-toggle={'target: #edit-' + id}>
         <span className='icon' uk-icon='icon: pencil; ratio: .8' />
         Edit
-      </a>
+      </button>
       <button
         className='delete-link uk-button uk-button-text uk-float-right'
         type='button'>

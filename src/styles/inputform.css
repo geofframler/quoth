@@ -34,6 +34,7 @@ form label {
 .source-link {
     height: 32px;
     padding-top: 8px;
+    padding-right: 8px;
 }
 
 .input-form-author {
@@ -130,6 +131,10 @@ form label {
 
 .uk-modal-body {
     padding-top: 14px;
+}
+
+.uk-modal textarea {
+    height: 160px;
 }
 
 @media only screen and (max-width: 665px) {

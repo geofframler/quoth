@@ -20,7 +20,8 @@ describe('Visit Quoth', () => {
   });
 
   it('renders quotes', () => {
-    cy.get('#quote-list')
+    cy.wait(500)
+      .get('#quote-list')  
       .find('.quote')
       .should('exist');
   })
@@ -29,5 +30,4 @@ describe('Visit Quoth', () => {
     cy.get('#footer')
       .should('exist');
   });
-
 });

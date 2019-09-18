@@ -61,7 +61,6 @@ function EditModal(props) {
         </div>
         <div className='uk-modal-body'>
           <div id='input-form' className='edit-form'>
-
             <form onSubmit={handleSubmit} autoComplete='off'>
 
               <label>Quote</label>
@@ -81,7 +80,7 @@ function EditModal(props) {
                 className='edit-author input-form-author uk-input'
                 type='text'
                 name='author'
-                placeholder='Author Name'
+                placeholder='Author'
                 onChange={handleInputChange}
                 value={editInputs.author}
                 required />

@@ -11,10 +11,11 @@ const Quote = (quote) => {
       </div>
       {quote.source && (
         <div className='quote-source'>
-          Source: 
-            <a href={quote.source} target='_blank' rel='noopener noreferrer'>
-              {quote.source}
-            </a>
+          Source: <a href={quote.source} 
+                     target='_blank' 
+                     rel='noopener noreferrer'>
+                    {quote.source}
+                  </a>
         </div>
       )}
     </div>

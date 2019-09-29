@@ -2,7 +2,7 @@
 
 ## A Quotes App
 
-Quoth is a single page application built in React that lets the user:
+Quoth is a single page application built in React as a front end demonstration for future employers. It lets the user:
 
 1. Pull a list of quotes from an API.
 2. Create a new quote.

@@ -30,18 +30,14 @@ In the project directory, run: `yarn` to install all the dependencies. Then you 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn cypress open`
-
-Opens Cypress's electron app, useful when writing test as it reloads the test suite when editing a test.
-
-### `yarn cypress run`
-
-Executes the Cypress test suite in the terminal (headless mode).
-
 ### `yarn api`
 
 Runs the api locally.<br>
 The api is available @ [http://localhost:3001](http://localhost:3001).
+
+### `yarn cypress run`
+
+Executes the Cypress test suite in the terminal (headless mode).
 
 ## API Specification
 

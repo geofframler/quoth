@@ -2,6 +2,8 @@
 
 ## A Quotes App
 
+[Click here to watch a demo of Quoth on YouTube!](https://www.youtube.com/watch?v=B7YKPSL68VU)
+
 Quoth is a single page application built in React as a front end demonstration for future employers. It lets the user:
 
 1. Pull a list of quotes from an API.
@@ -10,8 +12,6 @@ Quoth is a single page application built in React as a front end demonstration f
 4. Delete a quote.
 5. Sort quotes New to Old, Old to New, Author A-Z, and Author Z-A.
 6. Search for quotes.
-
-[Click here to watch a demo of Quoth on YouTube!](https://www.youtube.com/watch?v=B7YKPSL68VU)
 
 There are also examples of e2e tests using [cypress](https://www.cypress.io) in the cypress folder.
 

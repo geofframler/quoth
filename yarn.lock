@@ -4829,9 +4829,9 @@ hmac-drbg@^1.0.0:
     minimalistic-crypto-utils "^1.0.1"
 
 hosted-git-info@^2.1.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
-  integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -10196,11 +10196,6 @@ uglify-js@^3.1.4:
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
-
-uikit@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.0.tgz#5f975c84c1bf6379e1e47bb242aeafeebb6760fa"
-  integrity sha512-fTejdVwA5Jcrgfr8cY6rT/oBql8cj42HMpKUgnOkcPqxlpI5F+mPVYTSBfX8U5bso8ZtxLOyoUtdfc4XSMNqTA==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
